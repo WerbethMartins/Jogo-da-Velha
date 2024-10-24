@@ -1,0 +1,112 @@
+/********* Formatação Geral *********
+*************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/********* Formatação Tabela Inicial *********
+************************************************/
+#pagina_incial {
+    opacity: 0;
+    transform: translateY(-5px); /*Começa mais baixo*/
+    transition: all 1s ease-out;
+}
+#pagina_incial.visible {
+    opacity: 1;
+    transform: translateY(0); /*Volta para a posição inicial*/
+}
+.tabela_inciar {
+    margin-top: 5px;
+}
+.img_Avatar {
+    width: 150px;
+    height: 150px;
+}
+/* Formatando o Botão */
+.button_iniciar { /* Configurando o botão */
+    cursor: pointer;
+    position:relative;
+    display:inline-block;
+    margin: 30px;
+}
+.button_iniciar a { /* Configurando o link do botão */
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:26px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#16c106;
+    display:block;
+    position:relative;
+    padding:20px 30px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    -moz-box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+.button_iniciar a:active { /* Configuração do botão ativo */
+    top:10px;
+    background-color:#49fd02;
+  
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #425305;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #425305;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #425305;
+}
+.button_iniciar:after { /* Configurando o botão após o click usando pseudo class */
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nome_jogador { /* Configuração do nome dos jogadores*/
+    margin: 2px;
+}
+
+/********* Formatação do palco do jogo*********
+************************************************/
+
+#palco_jogo {
+    text-align: center;
+    margin-top: 40em;
+}
+#palco_jogo img{
+    margin-top: 50px;
+}
+
+#mensagemVencedor {
+    display: none;
+    margin-top: 80px;
+    font-size: 35px;
+    text-shadow: 2px 2px 5px black;
+    animation: shadow 5s linear 1s infinite alternate;
+}
+@keyframes shadow {
+    from {text-shadow: 2px 2px 5px black;}
+    to{text-shadow: 2px 2px 5px rgb(253, 10, 10);}
+}
+
+
+/* Formatação icones X/O*/
+.simbolos_jogo img {
+    width: 80px;
+    height: 80px;
+}

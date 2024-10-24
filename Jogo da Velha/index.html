@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <!--Estilo CSS-->
+    <link rel="stylesheet" href="estilo.css">
+    
+    <!--Arquivo Externo JavaScript-->
+    <script language="javascript" src="Js.js"></script>
+    <title>Jogo Da velha</title>
+</head>
+<body>
+    <!--Pagina inicial-->
+    <div id="pagina_incial" align="center">
+        <table border="0" class="tabela_inciar">
+            <tbody>
+                <tr> <!--Primeira linha-->
+                    <td colspan="3" align="center">JOGO DA VELHA</td> 
+                </tr>
+                <tr> <!--Segunda linha Imagens Avatar/Start--> 
+                    <td align="center">
+                        <img class="img_Avatar" src="img/Avatar_3.png" alt=""> <!--imagem do jogador 1-->
+                        <br>
+                        <input id="entrada_nome_jogador_1" class="nome_jogador" type="text" maxlength="10" placeholder="Nome do jogador 1"></input> <!--Nome do jogador 2-->
+                    </td> 
+                    <td align="center"><div id="button_iniciar_jogo" class="button_iniciar"><a>Iniciar</a></div></td>  <!--Botão Iniciar-->
+                    <td align="center">
+                        <img class="img_Avatar" src="img/Avatar_2.png" alt=""> <!--imagem do jogador 2-->
+                        <br> 
+                        <input id="entrada_nome_jogador_2" class="nome_jogador" type="text" maxlength="10" placeholder="Nome do jogador 2" ></input> <!--Nome do jogador 2-->
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Palco jogo da velha-->
+    <div id="palco_jogo" style="display: none; margin-bottom: 25px; ">
+        <div style="display: inline-block; margin-right: 20px;">
+            <img class="img_Avatar" src="img/Avatar_3.png" alt=""> <!--imagem do jogador 1-->
+            <br>
+            <span id="nome_jogador_1"></span>
+        </div>
+        <div style="display: inline-block;">
+            <table border="0">
+                <tr> <!--Primeira linha-->
+                    <td style="border-right: 1px solid black; border-bottom: 1px solid black;">
+                        <div class="jogada" id="A-1" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td style="border-bottom: 1px solid black;">
+                        <div class="jogada" id="A-2" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td style="border-left: 1px solid black; border-bottom: 1px solid black;">
+                        <div class="jogada" id="A-3" style="height: 100px; width: 100px;"></div>
+                    </td>
+                </tr>
+                <tr> <!--Segunda linha-->
+                    <td style="border-right: 1px solid black; border-bottom: 1px solid black;">
+                        <div class="jogada" id="B-1" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td style="border-bottom: 1px solid black;">
+                        <div class="jogada" id="B-2" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td style="border-left: 1px solid black; border-bottom: 1px solid black;">
+                        <div class="jogada" id="B-3" style="height: 100px; width: 100px;"></div>
+                    </td>
+                </tr>
+                <tr> <!--Terceira linha-->
+                    <td style="border-right: 1px solid black;">
+                        <div class="jogada" id="C-1" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td>
+                        <div class="jogada" id="C-2" style="height: 100px; width: 100px;"></div>
+                    </td>
+                    <td style="border-left: 1px solid black;">
+                        <div class="jogada" id="C-3" style="height: 100px; width: 100px;"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="display: inline-block; margin-left: 20px;">
+            <img class="img_Avatar" src="img/Avatar_2.png" alt=""> <!--imagem do jogador 2-->
+            <br>
+            <span id="nome_jogador_2"></span>
+        </div>
+        <div class="simbolos_jogo" style="display: none;">
+            <img src="img/X.png" alt="">
+            <img src="img/Circulo.png" alt="">
+        </div>
+
+        <!--Mensagem do ganhador-->
+        <div id="mensagemVencedor">
+            <p id="vencedor"></p>
+        </div>
+    </div>
+
+</body>
+</html>
