@@ -1,0 +1,218 @@
+/********* Formatação Geral *********
+*************************************/
+body {
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Formatação e animação dos quadrados*/
+.square {
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FA271C;
+    text-align: center; /*Centralizar horizontalmente*/
+    line-height: 50px; /*Centraliza verticalmente no quadrado*/
+    top: 50%;
+    left: 50%;
+    pointer-events: none; /*Para não bloquear o clique*/
+    transform: translate(-50%, -50%); /*Para centralizar o quadrado*/
+    animation: blink 2s infinite; /*Aplica a animação a cada dois segundos*/
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 0.5; color: #FA271C;} /*Totalmente visível*/
+    50% {opacity: 0; color: #000;} /*Invísivel no meio */
+}
+
+
+/********* Formatação Tabela Inicial *********
+************************************************/
+#pagina_incial {
+    opacity: 0;
+    transform: translateY(-5px); /*Começa mais baixo*/
+    transition: all 1s ease-out;
+}
+#pagina_incial.visible {
+    opacity: 1;
+    transform: translateY(0); /*Volta para a posição inicial*/
+}
+.tabela_inciar {
+    margin-top: 5px;
+}
+.img_Avatar {
+    width: 150px;
+    height: 150px;
+}
+/* Formatando o Botão */
+.button_iniciar { /* Configurando o botão */
+    cursor: pointer;
+    position:relative;
+    display:inline-block;
+    margin: 30px;
+}
+.button_iniciar a { /* Configurando o link do botão */
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:26px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#16c106;
+    display:block;
+    position:relative;
+    padding:20px 30px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    -moz-box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    box-shadow:inset 0 1px 0 #cff83c, 0 8px 0 #425305;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px
+}
+.button_iniciar a:active { /* Configuração do botão ativo */
+    top:10px;
+    background-color:#49fd02;
+  
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #425305;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #425305;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #425305;
+}
+.button_iniciar:after { /* Configurando o botão após o click usando pseudo class */
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nome_jogador { /* Configuração do nome dos jogadores*/
+    margin: 2px;
+}
+
+/********* Formatação do palco do jogo*********
+************************************************/
+#botao_voltar{ /*Configuração do botão voltar*/
+    display: none;
+}
+#voltar_inicio{
+    float: left;
+    cursor: pointer;
+    color: #fff;
+    background: #000;
+    margin-top: -350px;
+    margin-left: 430px;
+    padding: 2px;
+    animation-name: botao;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes botao { /*Animação background do botão*/
+    0% {background: #000; color: #fff}
+    25% {background: #fff; color:#000;}
+    50% {background: #000; color: #fff;}
+    75% {background: #fff; color: #000;}
+    100% {background: #000; color: #fff;}
+}
+
+#game {
+    margin-top: 20px;
+    margin-left: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.container_jogador1 {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    align-items: center;
+    margin-top: -158px;
+    margin-left: 280px;
+}
+.container_jogador1 img {
+    width: 140px;
+    height: 140px;
+}
+.container_jogador1 span{
+    margin-top: 8px;
+}
+
+.container_jogador2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: right;
+    margin-top: -170px;
+    margin-right: 250px;
+    
+}
+.container_jogador2 span{
+    margin-right: 10px;
+}
+
+/*Configuração da mensagem de vencedor*/
+#winnner-screen {
+    text-align: center;
+    margin-left: 20px;
+}
+
+#winner-message {
+    float: right;
+    margin-right: 30%;
+    margin-top: 25px;
+}
+
+/*Configuração botão de restart*/
+#restart-btn {
+    float: left;
+    margin-top: 40px;
+    margin-left: 624px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform;
+}
+
+/*Efeito Hover*/
+#restart-btn:hover {
+    transform: translateY(-5px); /*Levanta o botão ao passar o mouse*/
+}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <!--Estilo CSS-->
+    <link rel="stylesheet" href="estilo.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <!--Arquivo Externo JavaScript-->
+    <script language="javascript" src="Js.js"></script>
+    <title>Jogo Da velha</title>
+</head>
+<body>
+    <!-- Quadrados -->
+    <div class="square" style="top: 10%; left: 20%;"></div>
+    <div class="square" style="top: 10%; left: 70%;"></div>
+    <div class="square" style="top: 90%; left: 70%;"></div>
+    <div class="square" style="top: 90%; left: 20%;"></div>
+
+    <!--Pagina inicial-->
+    <div id="pagina_incial" align="center">
+        <table border="0" class="tabela_inciar">
+            <tbody>
+                <tr> <!--Primeira linha-->
+                    <td colspan="3" align="center">JOGO DA VELHA</td> 
+                </tr>
+                <tr> <!--Segunda linha Imagens Avatar/Start--> 
+                    <td align="center">
+                        <img class="img_Avatar" src="img/Avatar_3.png" alt=""> <!--imagem do jogador 1-->
+                        <br>
+                        <input id="entrada_nome_jogador_1" class="nome_jogador" type="text" maxlength="10" placeholder="Nome do jogador 1"></input> <!--Nome do jogador 2-->
+                    </td> 
+                    <td align="center"><div id="button_iniciar_jogo" class="button_iniciar"><a>Iniciar</a></div></td>  <!--Botão Iniciar-->
+                    <td align="center">
+                        <img class="img_Avatar" src="img/Avatar_2.png" alt=""> <!--imagem do jogador 2-->
+                        <br> 
+                        <input id="entrada_nome_jogador_2" class="nome_jogador" type="text" maxlength="10" placeholder="Nome do jogador 2" ></input> <!--Nome do jogador 2-->
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--Palco jogo da velha-->
+    <div id="game" style="display: none;">
+        <div class="cell" style="border-right: 1px solid black; border-bottom: 1px solid black;" data-index="0"></div>
+        <div class="cell" style="border-bottom: 1px solid black;" data-index="1"></div>
+        <div class="cell" style="border-left: 1px solid black; border-bottom: 1px solid black;" data-index="2"></div>
+        <div class="cell" style="border-right: 1px solid black; border-bottom: 1px solid black;" data-index="3"></div>
+        <div class="cell" style="border-bottom: 1px solid black;" data-index="4"></div>
+        <div class="cell" style="border-left: 1px solid black; border-bottom: 1px solid black;" data-index="5"></div>
+        <div class="cell" style="border-right: 1px solid black;" data-index="6"></div>
+        <div class="cell" style="height: 100px; width: 100px;" data-index="7"></div>
+        <div class="cell" style="border-left: 1px solid black;" data-index="8"></div>
+    </div>
+    <!-- Imagem/Nome Jogadores -->
+    <div class="container_jogador1" style="display: none;">
+        <img class="img_Avatar" src="img/Avatar_3.png" alt=""> <!--imagem do jogador 1-->
+        <br>
+        <span id="nome_jogador_1"> <!--Nome do jogador 1-->
+    </div>
+    <div class="container_jogador2" style="display: none;">
+        <img class="img_Avatar" src="img/Avatar_2.png" alt=""> <!--imagem do jogador 2-->
+        <br> 
+        <span id="nome_jogador_2"> <!--Nome do jogador 2-->
+    </div>
+    <!-- Botão voltar -->
+    <div id="botao_voltar">
+        <button id="voltar_inicio">Voltar</button>
+    </div>
+    <!-- Botão Reiniciar -->
+    <div id="winner-screen" style="display: none;"> 
+        <h1 id="winner-message"></h1>
+        <button id="restart-btn">Reiniciar Jogo</button>
+    </div>
+</body>
+</html>
